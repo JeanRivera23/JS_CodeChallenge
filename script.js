@@ -1,6 +1,6 @@
 // Write a function named stringy that takes a size and returns a string of alternating '1s' and '0s'. The string should start with a 1. A string with size 6 should return :'101010'. With size 4 should return : '1010'. With size 12 should return : '101010101010'. The size will always be positive and will only use whole numbers.
 
-function Stringy(size) {
+function stringy(size) {
   // variable numList stores an array that takes in a size
   var numList = new Array(size);
 
@@ -24,214 +24,124 @@ function Stringy(size) {
     }
   }
   // returns array values in string
-  console.log(numList.join());
+  // console.log(numList.join());
+  return numList.join()
 }
 
-Stringy(4);
+stringy(4);
 
 // odd number is 2*i + 1
-
-// function Stringy(size) {
-//   var numList = new Array(size);
-//   var i = 0;
-//   for (i = 0; i < size; i++) {
-//     if (numList[i] == 2*i + 1) {
-//       numList[i] = "0";
-//     }
-//     else {
-//       numList[i] = "1";
-//     }
-//   }
-//   console.log(numList.join());
-// }
-//
-// Stringy(4);
-
-
-
-// // counter
-// var i = 0;
-//
-// // string constructor function
-// function Stringy() {
-//   // empty array
-//   this.finalString = [];
-// }
-//
-// // Stringy method
-// Stringy.prototype.addOneZero = function(userNumber) {
-//   // counter starts at zero, while the counter is less than or equal to the userNumber the loop can continue
-//   for (i = 1; i <= userNumber; i++) {
-//     if (userNumber == isOdd()) {
-//       this.finalString.push("1");
-//     }
-//     else {
-//       this.finalString.push("0");
-//     }
-// }
-//
-// // function to determine if number is odd
-// function isOdd() {
-//   i = 1
-//   if (userNumber = 1 || userNumber = i + 2) {
-//     i++
-//     returns true;
-//   else {
-//     returns false;
-//   }
-// }
-//
-// // creating new Stringy variable
-// var newString = new Stringy();
-//
-// // pushing userNumbner into newString
-// newString.addOneZero(2);
-// // retrieving array values
-// console.log(newString.finalString);
-//
-// // pushing userNumbner into newString
-// newString.addOneZero(5);
-// // retrieving array values
-// console.log(newString.finalString);
-
-
-// var i = 0;
-//
-// function Stringy() {
-//   this.finalString = [];
-// }
-//
-// Stringy.prototype.addOneZero = function(userNumber) {
-//   for (i = 1; i <= userNumber; i++) {
-//   this.finalString.push("1");
-//   this.finalString.push("0");
-//   }
-// };
-//
-// var newString = new Stringy();
-//
-// newString.addOneZero(3);
-// console.log(newString.finalString);
-
-// var i = 0;
-//
-// function Stringy() {
-//   this.finalString = [];
-// }
-//
-// Stringy.prototype.addOneZero = function(userNumber) {
-//   for (i = 0; i <= userNumber; i++) {
-//   this.finalString.push("1");
-//   this.finalString.push("0");
-//   }
-// };
-//
-// var newString = new Stringy();
-//
-// newString.addOneZero(10);
-
-
-// var userName
-// var x = 0;
-//
-// function Stringy() {
-//   this.finalString = [];
-// }
-//
-// Stringy.prototype.addOneZero = function(userName) {
-//   finalString.length = userName;
-//
-//   for (x = 1, x <= userName, x++) {
-//     finalString.push = "1";
-//     finalString.push = "0";
-//   }
-// }
-
-
-// function oddNum(userName.length) {
-//   for (x = 1; x <= userName; x = x + 2)
-//   return true;
-// }
-//
-// function evenNum(userName) {
-//   for (x = 2; x <= userName; x = x + 2)
-//   return true;
-// }
-
-
-//
-// function stringy(userNumber) {
-//   var finalString = "";
-//   var x = 0;
-//
-//   var oddNum() {
-//     for (x = 1; x <= userNumber; x + 2)
-//     finalString = "0";
-//
-//   }
-//
-//   var evenNum() {
-//     for (x = 2, x <= userNumber, x + 2)
-//     finalString = "0";
-//   }
-//
-//   if (userNumber > 0 && userNumber ==) {
-//     finalString.length = userNumber;
-//     finalString = "1"
-//   }
-//
-//
-//   if (i = 1, i + 2) {
-//     finalString.length = userNumber;
-//     finalString = "1";
-//     finalString = "1" + "0";
-//   }
-// }
-//
-// stringy(5);
-// console.log(finalString);
 
 
 // Given a non-negative integer, return an array containing a list of independent digits in reverse order. Example: 348597 => [7,9,5,8,4,3]
 
-function userInput(stuff) {
-  var inputArray = stuff.split(" ");
-  console.log(inputArray);
+function userInput(num) {
+  // counter
+  var i = 0;
 
-  var reverseInput = [];
-  i = inputArray.length-1;
-  x = 0;
-  i--
-  x++
-  reverseInput[i] = inputArray[x];
+  // array where the number wll be pushed
+  var inputArray = [];
 
-  console.log(reverseInput);
+  // loop
+  // the array will be the length of the number passed into function. To get the reverse of the number, subtract the number's length from counter. This will be the index value of the number that is pushed into array.
+  for (i=0; i <= num.length; i++) {
+    var size = num.length
+    var reverse = num[num.length - i];
+
+    inputArray.push(reverse);
+  }
+  
+  inputArray.shift(0);
+  return inputArray
+  // console.log(inputArray);
 }
 
-userInput(10345);
-
-
-// if userInput is 1468 then array length = 4
-// userInput.split = [1, 4, 6, 8]
-// index = 0 - 3
-// index =    3  2  1  0
-// reverseArray = [8, 6, 4, 1];
-//
-// i = inputArray.length
-// i--
-// reverse[i] = []
+userInput("8675309");
 
 
 // Fibonacci number is the sum of the previous two sequence numbers. Below is an example of the sequence 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, … Notice the sequence pattern is the sum of the previous two numbers? 0 + 1 = 1 1 + 1 = 2 1 + 2 = 3 2 + 3 = 5 3 + 5 = 8 … Build a function to illustrate how to get this sequence to output. If you don’t know where to begin start with pseudo code to work through the steps
 
+// function
+function generateFib() {
+  // counter
+  var i = 0;
+  // array where numbers will be pushed
+  var fibArray = [];
+
+  // pushing first two numbers in Fibonacci sequence into array
+  fibArray.push(1);
+  fibArray.push(1);
+  // console.log(fibArray);
+
+  // loop will output the next 30 Fibonacci numbers
+  for (i=0; i <= 30; i++) {
+    // next number in sequence will equal to the last two numbers added
+    var nextNum = fibArray[i] + fibArray[i + 1]
+    // next number in sequence is pushed into fibArray
+    fibArray.push(nextNum);
+  }
+  return fibArray
+}
+
+generateFib();
 
 
+// Your online store likes to give out coupons for special occasions. Some customers try to cheat the system by entering invalid codes or using expired coupons. Write a function called checkCoupon to verify that a coupon is valid and not expired. If the coupon is good, return true. Otherwise, return false. A coupon expires at the END of the couponDate date. All dates will be passed in as strings in this format: "June 15, 2014"
 
+// date variables
+var checkMonth;
+var checkDay;
+var checkYear;
+var date = new Date();
 
+// month array, will have to convert month to number from 0-11 since that's what getMonth returns
+var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+// function
+function checkCoupon(couponDate) {
+  // retrieving current month, day and year
+  checkMonth = date.getMonth();
+  checkDay = date.getDate();
+  checkYear = date.getFullYear();
+  // console.log(checkMonth);
+  // console.log(checkDay);
+  // console.log(checkYear);
 
+  // variable containing the input date string split, splitting by space
+  var values = couponDate.split(" ");
 
+  // the different parts of date string (3) can be accessed like array
+  values[0] = month.indexOf(values[0]);
+  // console.log(values)
 
+  // removing the comma after the day
+  values[1] = values[1].slice(0, -1);
+  // console.log(values)
 
+  // turning string values into numbers
+  values[1] = parseInt(values[1]);
+  values[2] = parseInt(values[2]);
+  // console.log(values)
 
-// Your online store likes to give out coupons for special occasions. Some customers try to cheat the system by entering invalid codes or using expired coupons. Write a function called checkCoupon to verify that a coupon is valid and not expired. If the coupon is good, return true. Otherwise, return false. A coupon expires at the END of the expiration date. All dates will be passed in as strings in this format: "June 15, 2014"
+  // checking coupon date against current date
+  // if the year on coupon is greater than current year, then the coupon is valid
+  if (values[2] > checkYear) {
+    return true
+  }
+  // if the year on coupon is same as current year, check if the coupon month is greater than current month, if yes then coupon is valid
+  else if (values[2] == checkYear && values[0] > checkMonth) {
+    return true
+  }
+  // if the coupon year and month are same as current date, then check to see if the day on coupon is greater than or equal to the current date, if yes coupon is valid
+  else if (values[2] == checkYear && values[0] == checkMonth && values[1] >= checkDay) {
+  return true
+  }
+  // if none of the conditions above were met, then coupon is invalid
+  else {
+    return false
+  }
+}
+
+// checkCoupon("March 01, 2019");
+// checkCoupon("April 08, 2016");
+// checkCoupon("April 08, 2017");
